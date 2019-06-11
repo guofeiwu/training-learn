@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/26 17:00
  * @description 快速失败
  */

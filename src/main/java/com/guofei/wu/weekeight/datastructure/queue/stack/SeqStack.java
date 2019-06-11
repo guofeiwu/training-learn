@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/27 9:47
  * @description 顺序栈
  */

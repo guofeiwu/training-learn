@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/27 14:57
  * @description
  */

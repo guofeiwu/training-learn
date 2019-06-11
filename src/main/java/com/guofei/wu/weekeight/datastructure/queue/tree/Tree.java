@@ -3,7 +3,7 @@ package com.guofei.wu.weekeight.datastructure.queue.tree;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/27 14:55
  * @description
  */

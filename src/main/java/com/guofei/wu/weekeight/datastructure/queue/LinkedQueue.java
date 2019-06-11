@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/23 18:05
  * @description 链式队列
  */

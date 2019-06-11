@@ -2,7 +2,7 @@ package com.guofei.wu.weekeight.datastructure.queue;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/24 9:35
  * @description 单链表节点
  */

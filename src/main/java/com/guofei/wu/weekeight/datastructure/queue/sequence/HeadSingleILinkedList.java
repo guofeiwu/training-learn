@@ -4,7 +4,7 @@ import com.guofei.wu.weekeight.datastructure.queue.Node;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/25 14:46
  * @description 带有头结点并含有尾指针
  */

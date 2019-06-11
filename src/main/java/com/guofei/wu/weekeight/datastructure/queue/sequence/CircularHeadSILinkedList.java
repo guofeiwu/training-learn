@@ -4,7 +4,7 @@ import com.guofei.wu.weekeight.datastructure.queue.Node;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/26 14:03
  * @description 循环单链表
  */

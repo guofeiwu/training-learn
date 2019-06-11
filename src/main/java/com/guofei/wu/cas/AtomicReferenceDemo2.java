@@ -12,7 +12,7 @@ public class AtomicReferenceDemo2 {
         User updateUser = new User("Shine", 25);
         atomicUserRef.compareAndSet(user, updateUser);
         //执行结果:User{name='Shine', age=25}
-              System.out.println(atomicUserRef.get().toString());  
+        System.out.println(atomicUserRef.get().toString());
     }
 
     static class User {

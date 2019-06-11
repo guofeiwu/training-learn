@@ -2,7 +2,7 @@ package com.guofei.wu.weekeight.datastructure.queue;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/23 11:41
  * @description 队列抽象数据类型
  */

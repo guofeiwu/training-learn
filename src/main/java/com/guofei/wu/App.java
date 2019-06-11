@@ -84,7 +84,7 @@ public class App {
          * HashSet 内部的实现就是HashMap  HashMap 默认容量为16
          * @since 2018/8/24
          */
-        Set<String> set = new HashSet();
+//        Set<String> set = new HashSet();
 //        set.add("   ");
 //        set.add("A");
 //        set.add("B");
@@ -97,7 +97,7 @@ public class App {
 //        }
         // 继承HashSet 仅重写了spliterator方法
 //        Set<String> linkedHashSet = new LinkedHashSet<>();
-        set = new TreeSet<>();
+//        set = new TreeSet<>();
         /**
          * 初始化容量 11   线程安全  方法加了锁  synchronized
          *
@@ -137,8 +137,20 @@ public class App {
          *
          * @since 2018/8/24
          */
-//        Map hashMap = new HashMap();
-//
+        Map hashMap = new HashMap();
+
+
+        hashMap.put(null, "A");
+        hashMap.put(1, "B");
+        hashMap.put(2, null);
+        hashMap.put(3, null);
+        hashMap.forEach((b, c) -> {
+            System.out.println(b+"HH");
+            System.out.println(c);
+            System.out.println("------");
+        });
+
+
 //        // 15 & key的hash值 值相同
 //        hashMap.put("A", "A");
 //        hashMap.put("34", "34");
@@ -151,13 +163,7 @@ public class App {
 //        System.out.println(h >>> 16);
 //        System.out.println(h ^ 0);
 //        System.out.println(hash("A"));
-        int i = 1;
-        i = i++;
-        int j = i++;
-        int k = i + ++i * i++;
-        System.out.println(i);
-        System.out.println(j);
-        System.out.println(k);
+
 
     }
 

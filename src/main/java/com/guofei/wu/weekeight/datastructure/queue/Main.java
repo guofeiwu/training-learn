@@ -4,7 +4,7 @@ import java.lang.reflect.ParameterizedType;
 
 /**
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @date 2018/7/23 17:15
  * @description
  */

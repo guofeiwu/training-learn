@@ -4,7 +4,7 @@ package com.guofei.wu.weeknine.sort;
  * 选择排序
  *
  * @author guofei.wu
- * @email guofei_wu@ucarinc.com
+ * @email
  * @description
  * @since 2018/7/30 10:53
  */
@@ -17,8 +17,8 @@ public class SortArithmetic {
 
 
 //        Arrays.sort(sort);
-        selectSortArithmetic(sort);
-//        bubbleSortArithmetic(sort);
+//        selectSortArithmetic(sort);
+        bubbleSortArithmetic(sort);
 //        insertSortArithmetic(sort);
 
 //        shellSortArithmetic(sort);
