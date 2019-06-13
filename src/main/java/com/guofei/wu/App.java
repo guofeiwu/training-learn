@@ -1,6 +1,8 @@
 package com.guofei.wu;
 
 
+import com.google.common.collect.Maps;
+
 import java.util.*;
 
 /**
@@ -137,19 +139,18 @@ public class App {
          *
          * @since 2018/8/24
          */
-        Map hashMap = new HashMap();
-
-
-        hashMap.put(null, "A");
-        hashMap.put(1, "B");
-        hashMap.put(2, null);
-        hashMap.put(3, null);
-        hashMap.forEach((b, c) -> {
-            System.out.println(b+"HH");
-            System.out.println(c);
-            System.out.println("------");
-        });
-
+//        Map hashMap = new HashMap();
+//
+//
+//        hashMap.put(null, "A");
+//        hashMap.put(1, "B");
+//        hashMap.put(2, null);
+//        hashMap.put(3, null);
+//        hashMap.forEach((b, c) -> {
+//            System.out.println(b+"HH");
+//            System.out.println(c);
+//            System.out.println("------");
+//        });
 
 //        // 15 & key的hash值 值相同
 //        hashMap.put("A", "A");
@@ -165,9 +166,28 @@ public class App {
 //        System.out.println(hash("A"));
 
 
+        Map<String, Integer> hashMap = Maps.newHashMap();
+        Map<String, Integer> treeMap = Maps.newTreeMap();
+        Map<String, Integer> linkedHashMap = Maps.newLinkedHashMap();
+        System.out.println("--------------test hashMap");
+        testMap(hashMap);
+        System.out.println("--------------test treeMap");
+        testMap(treeMap);
+        System.out.println("--------------test linkedHashMap");
+        testMap(linkedHashMap);
+
+
     }
 
-
+    private static void testMap(Map<String, Integer> map) {
+        map.put("asd", 1);
+        map.put("2das", 2);
+        map.put("3das", 3);
+        map.put("4das", 4);
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+    }
 //    static final int hash(Object key) {
 //        int h;
 //        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);

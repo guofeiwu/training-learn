@@ -15,6 +15,7 @@ public class AnnotationDemo extends A {
         Class<?> annotationDemoClass = AnnotationDemo.class;
         //根据指定注解类型获取该注解
         DocumentC documentC = annotationDemoClass.getAnnotation(DocumentC.class);
+        System.out.println(documentC.name());
         System.out.println("documentC:" + documentC);
 
         //获取该元素上的所有注解，包含从父类继承

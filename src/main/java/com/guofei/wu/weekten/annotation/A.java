@@ -8,4 +8,9 @@ package com.guofei.wu.weekten.annotation;
  */
 @DocumentC
 public class A {
+    String name = "A";
+
+    public String getName() {
+        return name;
+    }
 }

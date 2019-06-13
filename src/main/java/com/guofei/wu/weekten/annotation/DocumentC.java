@@ -1,5 +1,7 @@
 package com.guofei.wu.weekten.annotation;
 
+import com.google.j2objc.annotations.LoopTranslation;
+
 import java.lang.annotation.*;
 
 /**
@@ -11,4 +13,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface DocumentC {
+    String name() default "abc";
 }
