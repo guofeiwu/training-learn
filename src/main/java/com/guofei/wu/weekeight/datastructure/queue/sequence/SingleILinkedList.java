@@ -237,4 +237,41 @@ public class SingleILinkedList<T> implements ILinkedList<T> {
         }
         return false;
     }
+
+    @Override
+    public void reserve() {
+
+        // 当前节点
+        Node<T> temp = this.headNode.next;
+
+        if (temp.next == null) {
+            // 无需翻转
+            return;
+        }
+
+        // 当前节点的下一个节点
+        Node next;
+        // 新节点为链表的第一个节点
+        Node<T> newNode = new Node<>(this.headNode.data, null);
+        // 当前节点不为空
+        while (temp != null) {
+            // 保存下一个节点
+            next = temp.next;
+            // 当前节点的下个节点指向上一个节点
+            temp.next = newNode;
+            // 新节点指向当前节点
+            newNode = temp;
+            // 当前节点指向下一个节点
+            temp = next;
+        }
+        this.headNode = newNode;
+    }
+
+    public void list() {
+        Node<T> temp = this.headNode;
+        while (temp != null) {
+            System.out.println("value:" + temp.data);
+            temp = temp.next;
+        }
+    }
 }

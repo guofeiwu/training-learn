@@ -226,4 +226,49 @@ public class HeadSingleILinkedList<T> implements ILinkedList<T> {
         }
         return false;
     }
+
+    public Node<T> getHeadNode() {
+        return headNode;
+    }
+
+    /**
+     * 反转单链表
+     */
+    @Override
+    public void reserve() {
+        // 当前节点
+        Node<T> temp = this.headNode.next;
+
+        if (temp == null) {
+            // 无需翻转
+            return;
+        }
+        // 当前节点的下一个节点
+        Node next;
+        // 新节点
+        Node<T> newNode = null;
+        // 当前节点不为空
+        while (temp != null) {
+            // 保存下一个节点
+            next = temp.next;
+            // 当前节点的下个节点指向上一个节点
+            temp.next = newNode;
+            // 新节点指向当前节点
+            newNode = temp;
+            // 当前节点指向下一个节点
+            temp = next;
+        }
+        // 头结点的下一个节点指向新节点
+        this.headNode.next = newNode;
+    }
+
+    public void list() {
+        Node<T> temp = this.headNode.next;
+        while (temp != null) {
+            System.out.println("value:" + temp.data);
+            temp = temp.next;
+        }
+    }
+
+
 }
