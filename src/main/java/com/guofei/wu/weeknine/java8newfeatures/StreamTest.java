@@ -1,5 +1,6 @@
 package com.guofei.wu.weeknine.java8newfeatures;
 
+import com.guofei.wu.weeknine.sort.javasortutil.MyComparator;
 import com.guofei.wu.weeknine.sort.javasortutil.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +20,30 @@ import java.util.stream.Stream;
  * @since 2018/8/3
  */
 public class StreamTest {
+
+
+    @Test
+    public void testCompare() {
+        List<User> users = new ArrayList<>();
+
+        users.stream()
+                .sorted(Comparator.comparing(User::getAge).thenComparing(User::getName));
+
+        users.stream()
+                .sorted(Comparator.comparing(User::getAge).thenComparing(user -> user.getName()).thenComparing(user -> user.getId()));
+
+        users.stream()
+                .sorted((Comparator.comparingInt((User user) -> user.getAge())).thenComparing((o1, o2) -> 0));
+
+        users.stream()
+                .sorted((Comparator.comparingInt((User o) -> o.getAge())).thenComparing(user -> user.getName()));
+
+
+        users.stream()
+                .sorted(Comparator.comparing(User::getAge).reversed().thenComparing(User::getName));
+
+    }
+
 
     private List<String> stringCollection = null;
     private Stream<String> stream = null;
