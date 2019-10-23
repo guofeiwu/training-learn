@@ -2,6 +2,8 @@ package com.guofei.wu.weekeight.datastructure.queue.sequence;
 
 
 import com.guofei.wu.weekeight.datastructure.queue.Node;
+import com.guofei.wu.weekeight.datastructure.queue.stack.SeqStack;
+import com.guofei.wu.weekeight.datastructure.queue.stack.Stack;
 import org.junit.Test;
 
 import java.lang.reflect.Array;
@@ -83,6 +85,34 @@ public class Main {
 
     }
 
+    @Test
+    public void testReservePrintLinkList() {
+        HeadSingleILinkedList<String> linkedList = new HeadSingleILinkedList<String>();
+        linkedList.add("A");
+        linkedList.add("B");
+        linkedList.add("C");
+        linkedList.add("D");
+        linkedList.add("E");
+
+        System.out.println("逆序打印单链表的数据～");
+
+        Node<String> headNode = linkedList.getHeadNode();
+
+        Node<String> next = headNode.next;
+        Stack<Node> stack = new SeqStack<>();
+
+
+        while (next != null) {
+            stack.push(next);
+            next = next.next;
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop().data);
+        }
+
+
+    }
 
     @Test
     public void testHeadLinkList() {
@@ -93,8 +123,7 @@ public class Main {
         linkedList.add("D");
         linkedList.add("E");
 
-
-       linkedList.list();
+        linkedList.list();
 
 
         System.out.println("list========================");
@@ -123,7 +152,7 @@ public class Main {
 
         System.out.println(linkedList.contains("A"));
         System.out.println("------------------------");
-         linkedList.removeAll("A");
+        linkedList.removeAll("A");
         for (int i = 0; i < linkedList.length(); i++) {
             System.out.println(linkedList.get(i));
         }
