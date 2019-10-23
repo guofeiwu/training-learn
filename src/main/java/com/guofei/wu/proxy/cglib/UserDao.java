@@ -1,10 +1,12 @@
 package com.guofei.wu.proxy.cglib;
 
-public class UserDao {
-    public void select() {
-        System.out.println("UserDao 查询 selectById");
-    }
-    public void update() {
-        System.out.println("UserDao 更新 update");
-    }
+/**
+ * @Author Mason
+ * @Description
+ * @Date 2019/10/11 17:32
+ **/
+public interface UserDao {
+    void update();
+    void select();
+
 }

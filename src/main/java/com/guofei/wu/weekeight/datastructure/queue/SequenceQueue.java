@@ -4,6 +4,13 @@ import java.io.Serializable;
 import java.util.NoSuchElementException;
 
 /**
+ * front 指向第一个元素
+ * rear指向最后一个元素的后一个位置
+ * <p>
+ * 队列为空： front=rear；
+ * 队列为满： front=（rear+1）% size
+ * 队列中的有效数据：（rear+size-front）%size
+ *
  * @author guofei.wu
  * @email
  * @date 2018/7/23 14:50
@@ -18,6 +25,9 @@ public class SequenceQueue<T> implements IQueue<T>, Serializable {
 
     private int front, rear;
 
+    /**
+     * 有效数据量
+     */
     private int size;
 
     public SequenceQueue() {
@@ -41,10 +51,14 @@ public class SequenceQueue<T> implements IQueue<T>, Serializable {
         return front == rear;
     }
 
+    public boolean isFull() {
+        return this.front == (this.rear + 1) % elementData.length;
+    }
+
     @Override
     public boolean add(T data) {
         // 判断队列是否已经满了
-        if (this.front == (this.rear + 1) % elementData.length) {
+        if (isFull()) {
             ensureCapacity(size * 2 + 1);
         }
         // 添加数据
@@ -85,7 +99,7 @@ public class SequenceQueue<T> implements IQueue<T>, Serializable {
         if (data == null) {
             throw new NullPointerException("数据不能为空!");
         }
-        if (this.front == (this.rear + 1) % this.elementData.length) {
+        if (isFull()) {
             throw new IllegalArgumentException("队列已满!");
         }
         this.elementData[rear] = data;
@@ -109,6 +123,9 @@ public class SequenceQueue<T> implements IQueue<T>, Serializable {
 
     @Override
     public T poll() {
+//        if (isEmpty()) {
+//            return null;
+//        }
         // 获取队首元素
         T temporary = this.elementData[this.front];
         //

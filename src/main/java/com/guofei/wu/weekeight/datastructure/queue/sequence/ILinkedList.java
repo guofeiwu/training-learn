@@ -83,4 +83,7 @@ public interface ILinkedList<T> {
      * @return
      */
     boolean contains(T data);
+
+
+    void reserve();
 }

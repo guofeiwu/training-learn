@@ -43,7 +43,7 @@ public class CircularHeadSILinkedList<T> implements ILinkedList<T> {
     public int length() {
         int length = 0;
         Node<T> p = this.head;
-        while (p.next != this.head) {
+        while (p.next != null && this.head != p.next) {
             length++;
             p = p.next;
         }
@@ -209,8 +209,8 @@ public class CircularHeadSILinkedList<T> implements ILinkedList<T> {
 
     @Override
     public void clear() {
-        this.head.next=head;
-        this.tail=head;
+        this.head.next = head;
+        this.tail = head;
     }
 
     @Override
@@ -226,5 +226,42 @@ public class CircularHeadSILinkedList<T> implements ILinkedList<T> {
             p = p.next;
         }
         return false;
+    }
+
+    @Override
+    public void reserve() {
+        Node<T> p = this.head;
+        // 当前节点
+        Node<T> temp = p.next;
+        if (temp == null) {
+            // 无需翻转
+            return;
+        }
+        // 当前节点的下一个节点
+        Node next;
+        // 新节点
+        Node<T> newNode = null;
+        // 当前节点不为空
+        while (temp != null && p.next != this.head) {
+            // 保存下一个节点
+            next = temp.next;
+            // 当前节点的下个节点指向上一个节点
+            temp.next = newNode;
+            // 新节点指向当前节点
+            newNode = temp;
+            // 当前节点指向下一个节点
+            temp = next;
+        }
+        // 头结点的下一个节点指向新节点
+        this.head.next = newNode;
+    }
+
+    public void list() {
+
+        Node<T> next = this.head.next;
+        while (next != null) {
+            System.out.println(next.data);
+            next = next.next;
+        }
     }
 }

@@ -49,17 +49,22 @@ public class Main {
     @Test
     public void testLinkList() {
         SingleILinkedList<String> linkedList = new SingleILinkedList<String>(new Node<String>("A"));
+//        linkedList.add("B");
+//        linkedList.add("C");
+//        linkedList.add("D");
+//        linkedList.add("A");
+//        linkedList.add("E");
+//        linkedList.add("A");
+//        linkedList.add("B");
+//        linkedList.add("A");
+        // linkedList.add("A");
         linkedList.add("B");
         linkedList.add("C");
         linkedList.add("D");
-        linkedList.add("A");
         linkedList.add("E");
-        linkedList.add("A");
-        linkedList.add("B");
-        linkedList.add("A");
-        linkedList.add(11111, "a");
-        linkedList.add(1, "F");
 
+
+        linkedList.list();
 
         System.out.println("length: " + linkedList.length());
         System.out.println("===============================");
@@ -82,15 +87,17 @@ public class Main {
     @Test
     public void testHeadLinkList() {
         HeadSingleILinkedList<String> linkedList = new HeadSingleILinkedList<String>();
+        linkedList.add("A");
         linkedList.add("B");
         linkedList.add("C");
         linkedList.add("D");
-        linkedList.add("A");
         linkedList.add("E");
-        linkedList.add("A");
-        linkedList.add("B");
-        linkedList.add("A");
 
+
+       linkedList.list();
+
+
+        System.out.println("list========================");
 
         for (int i = 0; i < linkedList.length(); i++) {
             System.out.println(linkedList.get(i));
@@ -116,7 +123,7 @@ public class Main {
 
         System.out.println(linkedList.contains("A"));
         System.out.println("------------------------");
-        linkedList.removeAll("A");
+         linkedList.removeAll("A");
         for (int i = 0; i < linkedList.length(); i++) {
             System.out.println(linkedList.get(i));
         }
@@ -142,8 +149,10 @@ public class Main {
         list.add("A");
         list.add("B");
         list.add("C");
-        list.add(1, "D");
-        list.add(2, "E");
+        System.out.println(list.length());
+        System.out.println(list);
+        list.reserve();
+        list.list();
     }
 
 
