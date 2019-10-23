@@ -67,10 +67,10 @@ public class ServiceImplService
      * @return
      *     returns ServiceImpl
      */
-    @WebEndpoint(name = "ServiceImplPort")
-    public ServiceImpl getServiceImplPort() {
-        return super.getPort(new QName("http://webserivce.wu.guofei.com/", "ServiceImplPort"), ServiceImpl.class);
-    }
+//    @WebEndpoint(name = "ServiceImplPort")
+//    public ServiceImpl getServiceImplPort() {
+//        return super.getPort(new QName("http://webserivce.wu.guofei.com/", "ServiceImplPort"), ServiceImpl.class);
+//    }
 
     /**
      * 
@@ -79,10 +79,10 @@ public class ServiceImplService
      * @return
      *     returns ServiceImpl
      */
-    @WebEndpoint(name = "ServiceImplPort")
-    public ServiceImpl getServiceImplPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://webserivce.wu.guofei.com/", "ServiceImplPort"), ServiceImpl.class, features);
-    }
+//    @WebEndpoint(name = "ServiceImplPort")
+//    public ServiceImpl getServiceImplPort(WebServiceFeature... features) {
+//        return super.getPort(new QName("http://webserivce.wu.guofei.com/", "ServiceImplPort"), ServiceImpl.class, features);
+//    }
 
     private static URL __getWsdlLocation() {
         if (SERVICEIMPLSERVICE_EXCEPTION!= null) {

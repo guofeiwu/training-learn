@@ -12,10 +12,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Mather {
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext acc = new AnnotationConfigApplicationContext(MainConfig.class);
-        MyBean myBean = (MyBean) acc.getBean("myBean");
-        System.out.println(myBean);
-        acc.close();
+//        AnnotationConfigApplicationContext acc = new AnnotationConfigApplicationContext(MainConfig.class);
+//        MyBean myBean = (MyBean) acc.getBean("myBean");
+//        System.out.println(myBean);
+//        acc.close();
 
     }
 }
