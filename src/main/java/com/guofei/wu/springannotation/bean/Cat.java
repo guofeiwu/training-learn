@@ -10,9 +10,31 @@ import org.springframework.stereotype.Component;
  * @date 2020-01-10 22:53
  * @since v3.0
  */
-@Component
+//@Component
 public class Cat implements InitializingBean, DisposableBean {
 
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    public Cat(String name) {
+        System.out.println("cat constructor...name:" + name);
+        this.name = name;
+    }
 
     /**
      * cat constructor...

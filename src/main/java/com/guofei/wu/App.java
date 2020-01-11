@@ -166,15 +166,15 @@ public class App {
 //        System.out.println(hash("A"));
 
 
-        Map<String, Integer> hashMap = Maps.newHashMap();
-        Map<String, Integer> treeMap = Maps.newTreeMap();
-        Map<String, Integer> linkedHashMap = Maps.newLinkedHashMap();
-        System.out.println("--------------test hashMap");
-        testMap(hashMap);
-        System.out.println("--------------test treeMap");
-        testMap(treeMap);
-        System.out.println("--------------test linkedHashMap");
-        testMap(linkedHashMap);
+//        Map<String, Integer> hashMap = Maps.newHashMap();
+//        Map<String, Integer> treeMap = Maps.newTreeMap();
+//        Map<String, Integer> linkedHashMap = Maps.newLinkedHashMap();
+//        System.out.println("--------------test hashMap");
+//        testMap(hashMap);
+//        System.out.println("--------------test treeMap");
+//        testMap(treeMap);
+//        System.out.println("--------------test linkedHashMap");
+//        testMap(linkedHashMap);
 
 
     }

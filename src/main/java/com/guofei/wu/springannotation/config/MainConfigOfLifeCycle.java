@@ -1,6 +1,9 @@
 package com.guofei.wu.springannotation.config;
 
 import com.guofei.wu.springannotation.bean.Car;
+import com.guofei.wu.springannotation.bean.Cat;
+import com.guofei.wu.springannotation.bean.LastBoss;
+import org.junit.Before;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -41,9 +44,36 @@ import org.springframework.context.annotation.Scope;
  * 3、JSR250：
  * 初始化：@PostConstruct bean创建完成并且赋值后执行
  * 销毁：@PreDestroy bean被销毁之前执行
+ * 4、使用 @BeanPostProcessor bean的后置处理器
+ * <p>
+ * 初始化：postProcessBeforeInitialization 在任何的初始化方法之前 InitializingBean's {@code afterPropertiesSet} or a custom init-method
+ * 销毁： postProcessAfterInitialization  在任何的销毁方法之后  like InitializingBean's {@code afterPropertiesSet} or a custom init-method
  *
  * @author guofei.wu
  * @version v3.0
+ * @BeanPostProcessor 原理
+ * <p>
+ * 初始化bean
+ * populateBean(beanName, mbd, instanceWrapper); 属性设置
+ * exposedObject = initializeBean(beanName, exposedObject, mbd);
+ * {
+ * wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+ * // 调用初始化方法
+ * invokeInitMethods(beanName, wrappedBean, mbd);
+ * wrappedBean = applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
+ * }
+ * 执行BeanPostProcessor：拿到所有的后置处理器，for循环执行
+ * {
+ * for (BeanPostProcessor processor : getBeanPostProcessors()) {
+ * Object current = processor.postProcessBeforeInitialization(result, beanName);
+ * if (current == null) {
+ * return result;
+ * }
+ * result = current;
+ * }
+ * return result;
+ * }
+ * }
  * @date 2020-01-10 22:38
  * @since v3.0
  */
@@ -57,5 +87,15 @@ public class MainConfigOfLifeCycle {
 //    @Scope("prototype")
     public Car car() {
         return new Car();
+    }
+
+    @Bean
+    public Cat cat() {
+        return new Cat("Jerry");
+    }
+
+    @Bean(initMethod = "customInit", destroyMethod = "customDestroy")
+    public LastBoss lastBoss() {
+        return new LastBoss("lastBigBoss");
     }
 }
