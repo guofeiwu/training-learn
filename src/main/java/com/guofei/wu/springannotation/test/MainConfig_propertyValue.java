@@ -6,6 +6,7 @@ import com.guofei.wu.springannotation.config.MainConfigOfPropertyValue;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 
 /**
  * @author guofei.wu
@@ -21,6 +22,12 @@ public class MainConfig_propertyValue {
         printBeanName(ac);
 
         Person person = (Person) ac.getBean("person");
+
+
+        ConfigurableEnvironment environment = ac.getEnvironment();
+        String property = environment.getProperty("person.nickName");
+        System.out.println(property);
+
 
         System.out.println(person);
     }

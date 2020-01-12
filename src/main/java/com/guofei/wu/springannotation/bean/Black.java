@@ -14,7 +14,7 @@ public class Black {
     @Autowired
     private AutowiredAnimal autowiredAnimal;
 
-    public Black() {
-        System.out.println("autowiredAnimal:" + autowiredAnimal);
+    public void print() {
+        System.out.println("autowiredAnimal====>>" + autowiredAnimal);
     }
 }

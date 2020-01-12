@@ -1,5 +1,6 @@
 package com.guofei.wu.springannotation.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,11 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class AutowiredAnimal {
-    public AutowiredAnimal() {
-    }
+
+//    @Autowired
+//    private Black black;
+//
+//    public void print() {
+//        System.out.println("black:" + black);
+//    }
 }
