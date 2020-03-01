@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
  * @date 2020-01-10 21:49
  * @since v3.0
  */
-@Component
+// @Component
 public class Black {
-    @Autowired
+    // @Autowired
     private AutowiredAnimal autowiredAnimal;
 
     public void print() {
