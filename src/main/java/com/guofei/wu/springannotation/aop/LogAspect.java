@@ -1,9 +1,11 @@
 package com.guofei.wu.springannotation.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -46,6 +48,34 @@ public class LogAspect {
     @AfterThrowing(value = "pointCut()", throwing = "ex")
     public void logException(JoinPoint joinPoint, Exception ex) {
         System.out.println("方法" + joinPoint.getSignature().getName() + "logException...异常信息为：" + ex);
+    }
+
+    // 环绕通知
+    @Around(value = "pointCut()")
+    public Object doAround(ProceedingJoinPoint joinPoint) {
+
+        System.out.println("doAround run...");
+
+        Object result = null;
+
+        try {
+
+            System.out.println("method before invoke...");
+
+            result = joinPoint.proceed();
+
+            System.out.println("method invoked, result: " + result);
+
+        } catch (Throwable throwable) {
+
+            System.out.println("method throws Exception: " + throwable.getMessage());
+
+            throwable.printStackTrace();
+
+        }
+
+        return result;
+
     }
 
 
