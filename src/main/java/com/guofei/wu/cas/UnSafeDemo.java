@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 
 public class UnSafeDemo {
 
-    public  static  void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
         // 通过反射得到theUnsafe对应的Field对象
         Field field = Unsafe.class.getDeclaredField("theUnsafe");
         // 设置该Field为可访问
@@ -24,23 +24,23 @@ public class UnSafeDemo {
         Field id = userClass.getDeclaredField("id");
 
         //获取实例变量name和age在对象内存中的偏移量并设置值
-        unsafe.putInt(user,unsafe.objectFieldOffset(age),18);
-        unsafe.putObject(user,unsafe.objectFieldOffset(name),"android TV");
+        unsafe.putInt(user, unsafe.objectFieldOffset(age), 18);
+        unsafe.putObject(user, unsafe.objectFieldOffset(name), "android TV");
 
         // 这里返回 User.class，
         Object staticBase = unsafe.staticFieldBase(id);
-        System.out.println("staticBase:"+staticBase);
+        System.out.println("staticBase:" + staticBase);
 
         //获取静态变量id的偏移量staticOffset
         long staticOffset = unsafe.staticFieldOffset(userClass.getDeclaredField("id"));
         //获取静态变量的值
-        System.out.println("设置前的ID:"+unsafe.getObject(staticBase,staticOffset));
+        System.out.println("设置前的ID:" + unsafe.getObject(staticBase, staticOffset));
         //设置值
-        unsafe.putObject(staticBase,staticOffset,"SSSSSSSS");
+        unsafe.putObject(staticBase, staticOffset, "SSSSSSSS");
         //获取静态变量的值
-        System.out.println("设置前的ID:"+unsafe.getObject(staticBase,staticOffset));
+        System.out.println("设置前的ID:" + unsafe.getObject(staticBase, staticOffset));
         //输出USER
-        System.out.println("输出USER:"+user.toString());
+        System.out.println("输出USER:" + user.toString());
 
         long data = 1000;
         byte size = 1;//单位字节
@@ -50,8 +50,8 @@ public class UnSafeDemo {
         //直接往内存写入数据
         unsafe.putAddress(memoryAddress, data);
         //获取指定内存地址的数据
-        long addrData=unsafe.getAddress(memoryAddress);
-        System.out.println("addrData:"+addrData);
+        long addrData = unsafe.getAddress(memoryAddress);
+        System.out.println("addrData:" + addrData);
 
         /**
          * 输出结果:
@@ -66,20 +66,21 @@ public class UnSafeDemo {
     }
 }
 
-class User{
-    public User(){
+class User {
+    public User() {
         System.out.println("user 构造方法被调用");
     }
+
     private String name;
     private int age;
-    private static String id="USER_ID";
+    private static String id = "USER_ID";
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", age=" + age +'\'' +
-                ", id=" + id +'\'' +
+                ", age=" + age + '\'' +
+                ", id=" + id + '\'' +
                 '}';
     }
 }

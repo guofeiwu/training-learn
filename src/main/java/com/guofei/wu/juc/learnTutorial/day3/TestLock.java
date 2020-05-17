@@ -17,7 +17,7 @@ public class TestLock {
     private Condition notFull = lock.newCondition();
     private Condition notEmpty = lock.newCondition();
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         TestLock testLock = new TestLock();
         Producer producer = testLock.new Producer();
         Consumer consumer = testLock.new Consumer();
@@ -26,7 +26,7 @@ public class TestLock {
         consumer.start();
     }
 
-    class Consumer extends Thread{
+    class Consumer extends Thread {
 
         @Override
         public void run() {
@@ -34,10 +34,10 @@ public class TestLock {
         }
 
         private void consume() {
-            while(true){
+            while (true) {
                 lock.lock();
                 try {
-                    while(queue.size() == 0){
+                    while (queue.size() == 0) {
                         try {
                             System.out.println("队列空，等待数据");
                             notEmpty.await();
@@ -47,15 +47,15 @@ public class TestLock {
                     }
                     queue.poll();                //每次移走队首元素
                     notFull.signal();
-                    System.out.println("从队列取走一个元素，队列剩余"+queue.size()+"个元素");
-                } finally{
+                    System.out.println("从队列取走一个元素，队列剩余" + queue.size() + "个元素");
+                } finally {
                     lock.unlock();
                 }
             }
         }
     }
 
-    class Producer extends Thread{
+    class Producer extends Thread {
 
         @Override
         public void run() {
@@ -63,10 +63,10 @@ public class TestLock {
         }
 
         private void produce() {
-            while(true){
+            while (true) {
                 lock.lock();
                 try {
-                    while(queue.size() == queueSize){
+                    while (queue.size() == queueSize) {
                         try {
                             System.out.println("队列满，等待有空余空间");
                             notFull.await();
@@ -76,8 +76,8 @@ public class TestLock {
                     }
                     queue.offer(1);        //每次插入一个元素
                     notEmpty.signal();
-                    System.out.println("向队列取中插入一个元素，队列剩余空间："+(queueSize-queue.size()));
-                } finally{
+                    System.out.println("向队列取中插入一个元素，队列剩余空间：" + (queueSize - queue.size()));
+                } finally {
                     lock.unlock();
                 }
             }

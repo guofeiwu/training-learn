@@ -16,6 +16,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class MainConfig_autowired {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig_Autowired.class);
+
     @Test
     public void test1() {
         // printBeanName(ac);

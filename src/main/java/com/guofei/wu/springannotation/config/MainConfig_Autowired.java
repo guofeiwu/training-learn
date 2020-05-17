@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Primary;
         value = {"com.guofei.wu.springannotation.dao",
                 "com.guofei.wu.springannotation.controller",
                 "com.guofei.wu.springannotation.service",
-        "com.guofei.wu.springannotation.bean"})
+                "com.guofei.wu.springannotation.bean"})
 @Import(value = {OtherColor.class})
 public class MainConfig_Autowired {
 
@@ -40,7 +40,7 @@ public class MainConfig_Autowired {
      * @Resource 可以和@Autowired一样有自动装配的功能；默认是按照组件名称进行装配的；
      * 不支持@Primary和@Autowired的require=false的功能
      * @Inject 需要倒入javax.inject包，和@Autowired功能一样，但是没有require=false的功能；
-     *
+     * <p>
      * 三、可以将@Autowired标注在方法上，构造函数，字段，参数，注解上
      */
 

@@ -1,6 +1,6 @@
 package com.guofei.wu.weekeleven.synchronizedlearn;
 
-    public class AccountingSyncClass implements Runnable {
+public class AccountingSyncClass implements Runnable {
     static int i = 0;
 
     /**

@@ -12,7 +12,8 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisUtils {
     static String redisHost = "10.103.41.88";
     static int redisPort = 6378;
-    public  Jedis getJedis() {
+
+    public Jedis getJedis() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxTotal(1024);
         jedisPoolConfig.setMaxIdle(100);
@@ -38,9 +39,8 @@ public class RedisUtils {
     }
 
 
-
-    public static Long strSet(String key,String value){
-        Jedis jedis = new Jedis(redisHost,redisPort);
-        return jedis.lpush("mylist","hh","hehe","heihei");
+    public static Long strSet(String key, String value) {
+        Jedis jedis = new Jedis(redisHost, redisPort);
+        return jedis.lpush("mylist", "hh", "hehe", "heihei");
     }
 }

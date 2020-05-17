@@ -7,10 +7,9 @@ package com.guofei.wu.weeknine.sort.javasortutil;
  * @since v3.0
  */
 public class Parent {
-    public Parent(){
+    public Parent() {
         System.out.println("parent constructor...");
     }
-
 
 
 }

@@ -27,8 +27,9 @@ public class TxConfig {
      * 2、在方法上加上@Transactional
      * 3、开启@EnableTransactionManagement
      * 4、配置事务管理器
-     *
+     * <p>
      * 事务原理
+     *
      * @return
      * @throws PropertyVetoException
      */

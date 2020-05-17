@@ -19,12 +19,12 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
         RootBeanDefinition beanDefinition = new RootBeanDefinition(Today.class);
         registry.registerBeanDefinition("today1", beanDefinition);
-        System.out.println("MyBeanDefinitionRegistryPostProcessor ... postProcessBeanDefinitionRegistry... count:"+registry.getBeanDefinitionCount());
+        System.out.println("MyBeanDefinitionRegistryPostProcessor ... postProcessBeanDefinitionRegistry... count:" + registry.getBeanDefinitionCount());
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println("MyBeanDefinitionRegistryPostProcessor ... postProcessBeanFactory... count:"+beanFactory.getBeanDefinitionCount());
+        System.out.println("MyBeanDefinitionRegistryPostProcessor ... postProcessBeanFactory... count:" + beanFactory.getBeanDefinitionCount());
 
     }
 }

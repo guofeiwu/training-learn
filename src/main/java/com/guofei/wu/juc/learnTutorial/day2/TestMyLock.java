@@ -8,9 +8,9 @@ public class TestMyLock {
 
     public static void main(String[] args) {
         SellTicket st = new SellTicket();
-        new Thread(st,"1好窗口").start();
-        new Thread(st,"2好窗口").start();
-        new Thread(st,"3好窗口").start();
+        new Thread(st, "1好窗口").start();
+        new Thread(st, "2好窗口").start();
+        new Thread(st, "3好窗口").start();
     }
 
 

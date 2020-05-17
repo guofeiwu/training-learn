@@ -5,7 +5,7 @@ package com.guofei.wu.jvm;
  * @version v1.0
  * @since 2019/3/6
  */
-public  class DeadLoopClass {
+public class DeadLoopClass {
 
 
     static {
@@ -21,7 +21,7 @@ public  class DeadLoopClass {
     public static void main(String[] args) {
         Runnable runnable = () -> {
             System.out.println("aaa");
-            System.out.println(Thread.currentThread()+ "start");
+            System.out.println(Thread.currentThread() + "start");
             DeadLoopClass dlc = new DeadLoopClass();
             System.out.println(Thread.currentThread().getName() + "run over");
         };

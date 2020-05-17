@@ -99,14 +99,14 @@ public class Main {
     }
 
     @Test
-    public void test8(){
+    public void test8() {
         Function<Integer, String[]> fun = (args) -> new String[args];
         String[] strs = fun.apply(10);
         System.out.println(strs.length);
 
         System.out.println("--------------------------");
 
-        Function<Integer, User[]> fun2 = User[] :: new;
+        Function<Integer, User[]> fun2 = User[]::new;
         User[] emps = fun2.apply(20);
         System.out.println(emps[0]);
     }

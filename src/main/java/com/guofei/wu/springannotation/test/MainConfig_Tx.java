@@ -13,7 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @since v3.0
  */
 public class MainConfig_Tx {
-     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TxConfig.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TxConfig.class);
 
 
     @Test

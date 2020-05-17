@@ -21,8 +21,6 @@ public class MainTest {
     ApplicationContext ac = new AnnotationConfigApplicationContext(MainConfig2.class);
 
 
-
-
     @Test
     public void testImport() {
         printBeanName(ac);
@@ -37,8 +35,7 @@ public class MainTest {
 
         Object prototypeBean = ac.getBean("&colorFactoryBean");
 
-        System.out.println("prototypeBean:"+prototypeBean.getClass());
-
+        System.out.println("prototypeBean:" + prototypeBean.getClass());
 
 
     }

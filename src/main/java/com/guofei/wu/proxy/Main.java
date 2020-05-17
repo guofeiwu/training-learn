@@ -22,7 +22,7 @@ public class Main {
 
         o.sayHello("Mason");
 
-        ProxyUtils.generateClassFile(SubjectImpl.class,"SubjectProxy");
+        ProxyUtils.generateClassFile(SubjectImpl.class, "SubjectProxy");
 
 
     }

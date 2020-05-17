@@ -7,5 +7,5 @@ package com.guofei.wu.designpatterns.vip.factory;
  * @since v3.0
  */
 public interface Car {
-    String  getCar();
+    String getCar();
 }

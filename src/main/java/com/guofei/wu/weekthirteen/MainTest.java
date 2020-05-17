@@ -70,6 +70,7 @@ public class MainTest {
                 new ArrayBlockingQueue(3), new MyThreadFactory(), new ThreadPoolExecutor.DiscardOldestPolicy());
         executor.execute(new ImplementsRunnableWay("my implements runnable way"));
     }
+
     @Test
     public void DateTest() throws ParseException {
 

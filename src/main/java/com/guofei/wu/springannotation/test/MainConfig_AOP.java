@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * @since v3.0
  */
 public class MainConfig_AOP {
-     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfigAOP.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MainConfigAOP.class);
 
 
     /**
@@ -27,7 +27,7 @@ public class MainConfig_AOP {
     @Test
     public void test1() {
         MathCalculator bean = ac.getBean(MathCalculator.class);
-        bean.div(1,0);
+        bean.div(1, 0);
 
     }
 }

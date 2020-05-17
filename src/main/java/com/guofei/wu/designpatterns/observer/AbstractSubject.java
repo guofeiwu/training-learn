@@ -29,6 +29,7 @@ public class AbstractSubject implements Subject {
             }
         }
     }
+
     @Override
     public void operation() {
     }

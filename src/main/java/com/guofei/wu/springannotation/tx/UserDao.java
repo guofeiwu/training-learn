@@ -18,7 +18,7 @@ public class UserDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-     @Transactional
+    @Transactional
     public void insertUser(User user) {
         String sql = "insert  into bedroom_building_manage(building_name,teacher_id,latest_close_door_time,feature,school_id,status,gmt_create,gmt_modify) " +
                 "values (?,?,?,?,?,?,?,?)";

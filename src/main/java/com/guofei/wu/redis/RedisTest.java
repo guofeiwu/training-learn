@@ -12,8 +12,8 @@ import java.math.BigDecimal;
 public class RedisTest {
 
     @Test
-    public void testStrSet(){
-        RedisUtils.strSet("test1","value1");
+    public void testStrSet() {
+        RedisUtils.strSet("test1", "value1");
 
     }
 }

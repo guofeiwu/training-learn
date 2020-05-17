@@ -46,7 +46,7 @@ public class DefaultInterfaceTest {
 
         System.out.println(n.get() + "," + m.orElse(2));
 
-                CacheBuilder.newBuilder().maximumSize(100)
+        CacheBuilder.newBuilder().maximumSize(100)
                 .expireAfterAccess(30, TimeUnit.SECONDS)
                 .build(new CacheLoader<Object, Object>() {
                     @Override

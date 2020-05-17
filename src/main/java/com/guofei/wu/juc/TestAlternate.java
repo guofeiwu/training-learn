@@ -51,7 +51,7 @@ class AltegnateDemo {
                 condition1.await();
             }
             number = 2;
-            System.out.println("A\t" +totalLoop);
+            System.out.println("A\t" + totalLoop);
             condition2.signal();
         } catch (Exception e) {
 

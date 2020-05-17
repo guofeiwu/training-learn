@@ -10,6 +10,7 @@ import java.lang.annotation.Target;
 public @interface SQLInteger {
     //该字段对应数据库表列名
     String name() default "";
+
     //嵌套注解
     Constraints constraint() default @Constraints;
 }

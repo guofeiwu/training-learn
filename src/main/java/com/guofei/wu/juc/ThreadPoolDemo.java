@@ -28,9 +28,7 @@ public class ThreadPoolDemo {
 
         Arrays.asList(1, 2, 3).parallelStream().filter((i) ->
                 i > 1
-        ).forEach((t)-> System.out.println(t));
-
-
+        ).forEach((t) -> System.out.println(t));
 
 
     }

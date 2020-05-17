@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class ExtConfig {
 
     @Bean
-    public Today today(){
+    public Today today() {
         return new Today();
     }
 }

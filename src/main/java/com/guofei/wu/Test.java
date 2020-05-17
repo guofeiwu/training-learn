@@ -31,7 +31,7 @@ public class Test {
                 try {
                     TimeUnit.SECONDS.sleep(1);
                     Object poll = queue.poll(1, TimeUnit.SECONDS);
-                    System.out.println("从队列中取出一个数" + poll );
+                    System.out.println("从队列中取出一个数" + poll);
 
                 } catch (Exception e) {
                     e.printStackTrace();

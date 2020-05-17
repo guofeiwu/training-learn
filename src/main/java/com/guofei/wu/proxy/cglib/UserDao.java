@@ -7,6 +7,7 @@ package com.guofei.wu.proxy.cglib;
  **/
 public interface UserDao {
     void update();
+
     void select();
 
 }

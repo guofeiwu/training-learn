@@ -13,7 +13,7 @@ public class Test {
         FactoryMethod factory = new BaomaFactory();
         System.out.println(factory.getCar().getCar());
 
-         factory = new FuteFactory();
+        factory = new FuteFactory();
         System.out.println(factory.getCar().getCar());
     }
 }

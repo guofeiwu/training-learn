@@ -59,7 +59,7 @@ public class FastFail {
     }
 
 
-        private static List<String> list = new ArrayList<>();
+    private static List<String> list = new ArrayList<>();
 //    private static List<String> list = new CopyOnWriteArrayList<>();
 
     private static void printAll() {

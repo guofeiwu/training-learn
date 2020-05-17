@@ -69,7 +69,6 @@ public class ArraysUtilTest {
         }
 
 
-
         Collections.reverse(users);
         for (User u :
                 users) {

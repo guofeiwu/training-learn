@@ -22,11 +22,11 @@ public class AnnotationDemo extends A {
         Annotation[] an = annotationDemoClass.getAnnotations();
         System.out.println("an:" + Arrays.toString(an));
         //获取该元素上的所有注解，但不包含继承！
-        Annotation[] an2=annotationDemoClass.getDeclaredAnnotations();
-        System.out.println("an2:"+ Arrays.toString(an2));
+        Annotation[] an2 = annotationDemoClass.getDeclaredAnnotations();
+        System.out.println("an2:" + Arrays.toString(an2));
 
         //判断注解DocumentA是否在该元素上
-        boolean b=annotationDemoClass.isAnnotationPresent(DocumentC.class);
-        System.out.println("b:"+b);
+        boolean b = annotationDemoClass.isAnnotationPresent(DocumentC.class);
+        System.out.println("b:" + b);
     }
 }

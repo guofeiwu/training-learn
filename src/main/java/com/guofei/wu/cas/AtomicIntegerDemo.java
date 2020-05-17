@@ -34,8 +34,6 @@ public class AtomicIntegerDemo {
         System.out.println(i);//输出结果:100000
 
 
-
-
         AtomicInteger atomicInteger = new AtomicInteger();
 //        int andIncrement = atomicInteger.getAndIncrement();
         int i = atomicInteger.incrementAndGet();

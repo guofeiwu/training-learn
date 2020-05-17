@@ -20,7 +20,7 @@ public class EncryptionAlgorithm {
 
     public static void main(String[] args) {
         String str = "123456.";
-        System.out.println( hashMd5(str));
+        System.out.println(hashMd5(str));
     }
 
 
@@ -32,15 +32,15 @@ public class EncryptionAlgorithm {
      * @author Mason
      * @since 2018/8/2
      */
-    public static String hashMd5(String str){
+    public static String hashMd5(String str) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(str.getBytes());
             byte[] bytes = md.digest();
             StringBuilder stringBuilder = new StringBuilder();
-            for(byte b:bytes){
+            for (byte b : bytes) {
                 String s = Integer.toHexString(b & 0xff);
-                if(s.length() == 1){
+                if (s.length() == 1) {
                     stringBuilder.append("0");
                 }
                 stringBuilder.append(s);

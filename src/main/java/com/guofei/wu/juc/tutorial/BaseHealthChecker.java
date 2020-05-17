@@ -3,20 +3,19 @@ package com.guofei.wu.juc.tutorial;
 import java.util.concurrent.CountDownLatch;
 
 public abstract class BaseHealthChecker implements Runnable {
- 
+
     private CountDownLatch _latch;
     private String _serviceName;
     private boolean _serviceUp;
- 
+
     //Get latch object in constructor so that after completing the task, thread can countDown() the latch
-    public BaseHealthChecker(String serviceName, CountDownLatch latch)
-    {
+    public BaseHealthChecker(String serviceName, CountDownLatch latch) {
         super();
         this._latch = latch;
         this._serviceName = serviceName;
         this._serviceUp = false;
     }
- 
+
     @Override
     public void run() {
         try {
@@ -26,17 +25,17 @@ public abstract class BaseHealthChecker implements Runnable {
             t.printStackTrace(System.err);
             _serviceUp = false;
         } finally {
-            if(_latch != null) {
+            if (_latch != null) {
                 System.out.println("countDown ...");
                 _latch.countDown();
             }
         }
     }
- 
+
     public String getServiceName() {
         return _serviceName;
     }
- 
+
     public boolean isServiceUp() {
         return _serviceUp;
     }

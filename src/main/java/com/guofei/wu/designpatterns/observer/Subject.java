@@ -7,7 +7,10 @@ package com.guofei.wu.designpatterns.observer;
  */
 public interface Subject {
     void add(Observer observer);
+
     void delete(Observer observer);
+
     void notifyObservers();
+
     void operation();
 }
