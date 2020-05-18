@@ -3,6 +3,7 @@ package com.crawer.demo.controller;
 import com.crawer.demo.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -31,9 +32,11 @@ public class ItemController {
 
     @GetMapping(value = "/weather")
     public Object weather() {
-//        for (int i = 0; i < 1000; i++) {
-//            itemService.weather();
-//        }
         return itemService.weather();
+    }
+
+    @GetMapping(value = "/weather/name")
+    public Object weather(@RequestParam String cityName) {
+        return itemService.weather(cityName);
     }
 }

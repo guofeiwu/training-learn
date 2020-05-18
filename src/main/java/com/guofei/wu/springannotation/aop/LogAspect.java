@@ -51,32 +51,32 @@ public class LogAspect {
     }
 
     // 环绕通知
-    @Around(value = "pointCut()")
-    public Object doAround(ProceedingJoinPoint joinPoint) {
-
-        System.out.println("doAround run...");
-
-        Object result = null;
-
-        try {
-
-            System.out.println("method before invoke...");
-
-            result = joinPoint.proceed();
-
-            System.out.println("method invoked, result: " + result);
-
-        } catch (Throwable throwable) {
-
-            System.out.println("method throws Exception: " + throwable.getMessage());
-
-            throwable.printStackTrace();
-
-        }
-
-        return result;
-
-    }
+//    @Around(value = "pointCut()")
+//    public Object doAround(ProceedingJoinPoint joinPoint) {
+//
+//        System.out.println("doAround run...");
+//
+//        Object result = null;
+//
+//        try {
+//
+//            System.out.println("method before invoke...");
+//
+//            result = joinPoint.proceed();
+//
+//            System.out.println("method invoked, result: " + result);
+//
+//        } catch (Throwable throwable) {
+//
+//            System.out.println("method throws Exception: " + throwable.getMessage());
+//
+//            throwable.printStackTrace();
+//
+//        }
+//
+//        return result;
+//
+//    }
 
 
 }

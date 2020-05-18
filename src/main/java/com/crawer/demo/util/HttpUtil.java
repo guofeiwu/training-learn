@@ -1,21 +1,19 @@
 package com.crawer.demo.util;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.protocol.RequestDefaultHeaders;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.util.EntityUtils;
-import org.springframework.stereotype.Component;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.util.EntityUtils;
+import org.springframework.stereotype.Component;
 
 /**
  * @author guofei.wu
@@ -25,8 +23,9 @@ import java.util.UUID;
  */
 @Component
 public class HttpUtil {
+
+    private static final String CHARTSET = "utf8";
     private PoolingHttpClientConnectionManager pm;
-    private static final String CHARTSET = "utf-8";
 
     public HttpUtil() {
         this.pm = new PoolingHttpClientConnectionManager();
@@ -38,7 +37,13 @@ public class HttpUtil {
     private String doGet(String url, Map<String, Object> params, String chartSet) {
         CloseableHttpClient aDefault = HttpClients.custom().setConnectionManager(pm).build();
         HttpGet httpGet = new HttpGet(url);
-        httpGet.addHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36");
+        httpGet.addHeader("User-Agent",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36");
+        httpGet.addHeader("Accept-Encoding", "gzip, deflate, br");
+        httpGet.addHeader("Sec-Fetch-Site", "same-site");
+        httpGet.addHeader("Sec-Fetch-Mode", "cors");
+        httpGet.addHeader("Sec-Fetch-Dest", "empty");
+        httpGet.addHeader("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8");
         httpGet.setConfig(getConfig());
         CloseableHttpResponse response = null;
         try {
@@ -98,10 +103,10 @@ public class HttpUtil {
 
     private RequestConfig getConfig() {
         return RequestConfig.custom()
-                .setConnectTimeout(1000)// 创建连接的最长时间
-                .setSocketTimeout(10000)
-                .setConnectionRequestTimeout(500) // 获取连接的最长时间
-                .build();
+            .setConnectTimeout(1000)// 创建连接的最长时间
+            .setSocketTimeout(10000)
+            .setConnectionRequestTimeout(500) // 获取连接的最长时间
+            .build();
     }
 
     public String doGet(String url) {
