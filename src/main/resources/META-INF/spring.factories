@@ -1,0 +1,8 @@
+
+org.springframework.context.ApplicationContextInitializer=\
+com.crawer.demo.spring.HelloApplicationContextInitializer
+
+org.springframework.context.ApplicationListener=\
+com.crawer.demo.spring.HelloApplicationListener
+org.springframework.boot.SpringApplicationRunListener=\
+com.crawer.demo.spring.HelloSpringApplicationRunListener
